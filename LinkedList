@@ -1,0 +1,75 @@
+Linked list is used for dynamic memory allocation,we can store both value and its address in the linked list.
+It basically consists of nodes and the node consists of two field-
+1-value
+2-Address
+The address of last node in the linked list is Null
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Address and pointer use in C for the revision
+//*p -> for the value
+//& -> for the address
+
+Code ->
+#include <stdio.h>
+int main()
+{
+int a = 10;
+int *p;
+p = &a;        //we have stored address of a in the p but we can also access the value of a in p just by using *p
+printf("Value of a = %d",a);  
+printf("\nAddress of a =%p",&a);
+
+printf("\nValue of p = %d",*p);  
+printf("\nAddress of a =%p",p);
+
+printf("\nAddress of p = %p",&p);
+
+return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+For struct
+#include <stdio.h>
+#include <string.h>
+struct Student
+{
+int id;
+char name[30];
+int age;
+};
+int main()
+{
+struct Student s1 = {1002,"Ashutosh",26};
+struct Student s;
+struct Student s3;
+s.id=1001;
+strcpy(s.name,"Amit");
+s.age=25;
+printf("\nId=%d",s.id);
+printf("Name=%s",s.name);
+printf("Age=%d\n",s.age);
+
+printf("\nId=%d",s1.id);
+printf("Name=%s",s1.name);
+printf("Age=%d\n",s1.age);
+
+printf("Enter Id :");
+scanf("%d",&s3.id);
+fflush(stdin);
+printf("Enter name:");
+scanf("%s",s3.name);
+fflush(stdin);
+printf("Enter age");
+scanf("%d",&s3.age);
+
+printf("\nId=%d",s3.id);
+printf("Name=%s",s3.name);
+printf("Age=%d\n",s3.age);
+
+return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
