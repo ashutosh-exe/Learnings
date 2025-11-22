@@ -1,0 +1,133 @@
+// Here we go again...as I have my end sem exam of DSA on 2nd december so i am being pretty serious as of now and covering all the topics i have left behind
+//so yeah linked list right it is third unit and important for the exam
+//i just need some basic knowledge and some basic operation of it so yeah
+//here i go
+
+
+
+Linked List consists of node which contain value and address of adjacent elements i can say i guess
+
+okay so its of multiple type:-
+1-Singly
+2-Doubly
+3-Circular
+
+so yeah lets go with singly
+Talking about single linked list it consist if nodes which contain values and address of the next node
+so lets make singly linked list now
+I am using java cause i dont like c I dont know why maybe cause its too old lol
+
+
+//code for linked list
+
+class LinkedList{
+      private Node head;
+      private Node tail;
+      private int size;
+      public LinkedList(){
+            this.size = 0;
+      }
+      private class Node{
+          private int value;
+          private Node next;
+
+          public Node(int value){
+              this.value = value;
+          }
+          public Node(int value,Node next){
+              this.value = value;
+              this.next = next;
+          }
+      }
+}
+//Damnn looks pretty good so this is my linked list
+talking about head and tail so head is simply the first node and tail is the last node which points always to null
+Okay so lets go to some basic operation in the linked list
+
+Insertion at the beginnng
+
+public void insertFirst(int value){
+    Node node = new Node(value);
+    node.next = head;
+    node = head;
+    if(tail == null){
+      tail = head;
+    }
+    size++;
+}
+
+Insertion at the end
+
+public void insertLast(int value){
+    if(head == null){
+        insertFirst(value);
+        return;
+    }
+    Node node = new Node(int value);
+    tail.next = node;
+    tail = node;
+    size++;
+}
+
+Insertion at particular index
+
+public void insert(int value,int index){
+    if(index == 0){
+      insertFirst(value);
+      return;
+    }
+    if(index == size){
+      insertLast(value);
+      return;
+    }
+    Node temp = head;
+    for(i=1;i<index;i++){
+      temp = temp.next;
+    }
+    Node node  = new Node(value,temp.next);
+    temp.next = node;
+    size++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
