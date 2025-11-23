@@ -1,0 +1,156 @@
+Okay so doubly linked list is linked list in which every node points to its previous and the next node so basically it is simply a linked list with two pointers
+So here is the code of doubly linked list:-
+
+public class DoublyLinkedList{
+    private Node head;
+    private Node tail;
+
+    private class Node{
+        int value;
+        Node next;
+        Node prev;
+        public Node(int value){
+            this.value = value;
+        }
+        public Node(int value,Node prev,Node next){
+            this.value = value;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+}
+
+Yup its look good to me now,lets perform some basic operations of insertions
+
+Insertion at the beginning
+
+public void insertFirst(int value){
+    Node node = new Node(value);
+    if(head == null){
+        head = node;
+        tail = node;
+        node.next = null;
+        node.prev = null;
+        return;
+    }
+    head.prev = node;
+    node.next = head;
+    node.prev = null;
+    head = node;
+}
+//yeah its complete and clean
+
+Insertion at the end
+
+public void insertLast(int value){
+    if(head == null){
+        insertFirst(value);
+        return;
+    }
+    Node node = new Node(value);
+    tail.next = node;
+    node.next = null;
+    node.prev = tail;
+    tail = node;
+}
+//yupp its perfect
+
+
+Finding a node
+
+public Node find(int value){
+    Node node = head;
+    while(node != null){
+        if(node.value == value){
+            return node;
+        }
+        node = node.next;
+    }
+    return null;
+}
+
+
+Insertion after a particular value
+
+public void insert(int after,int value){
+    Node p = find(after);
+    if(p == null){
+      System.out.println("Does not exist");
+      return;
+    }
+    Node node = new Node(value);
+    node.next = p.next;
+    p.next = node;
+    node.prev = p;
+    if(p == tail){
+        tail = node;
+    }
+    if(node.next != null){
+        node.next.prev = node;
+    }
+}
+
+Deletion of first element
+
+public void deleteFirst(){
+    if(head == null){
+      System.out.println("List is empty");
+      return;
+    }
+    if(head == tail){
+      tail = null;
+      head = null;
+      return;
+    }
+    head = head.next;
+    head.prev = null;
+}
+
+Deletion of last element;
+
+public void deleteLast(){
+    if(head == null){
+        System.out.println("List is empty");  
+        return;
+    }
+    if(head == tail){
+        tail = null;
+        head = null;
+        return;
+    }
+    tail = tail.prev;
+    tail.next = null;
+}
+
+Deletion of particular value
+
+public void delete(int value){
+    if(head == null){
+        System.out.println("List is already empty");
+        return;
+    }
+    if(head.value == value){
+        deleteFirst();
+        return;  
+    }
+    if(tail.value == value){
+        deleteLast();
+        return;  
+    }
+    Node node = head.next  ;
+    while(node != null){
+        if(node.value == value){
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            return;
+        }
+        node = node.next;
+    }
+    System.out.println("Value not found");
+}
+
+
+
+
+
+
