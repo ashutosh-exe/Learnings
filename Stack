@@ -1,0 +1,74 @@
+Stack is simply a data structure which works on the principle of LIFO(Last in First out) or First in Last out(FILO).It only has one end from where both insertion and deletion takes place.
+Stack has some basic functions like
+->peek
+->top
+->isEmpty
+->isFull
+->push
+->pop
+
+Java has inbuilt stack but for better understanding we make custom stack
+Code for custom stack->
+
+class Stack{
+  int[] data;
+  public static final int DEFAULT_SIZE = 10;
+  int top = -1;
+
+  public Stack(){
+    this(DEFAULT_SIZE);
+  }
+  public Stack(int size){
+    this.data = new int[size];
+  }
+
+  public boolean isEmpty(){
+    if(top == -1){
+      return true;
+    }
+    return false;
+  }
+  public boolean isFull(){
+    return top == data.length-1;
+  }
+  public void push(int item){
+    if(isFull()){
+      System.out.println("Stack Overflow");
+      return;
+    }
+    top++;
+    data[top] = item;
+    return;
+  }
+  public int pop(){
+    if(isEmpty()){
+      System.out.println("Stack UnderFLow");
+      return -1;
+    }
+    int removed = data[top];
+    top--;
+    return removed;
+  }
+  public int peek(){
+    if(isEmpty()){
+      System.out.println("Stack UnderFLow");
+      return -1;
+    }
+    return data[top];
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
