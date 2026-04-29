@@ -1,0 +1,17 @@
+private void DFSRecurssive(int curr,boolean[] visited){
+    visited[curr] = true;
+    System.out.print(curr+" ");
+
+    for(int neighbor:adj[curr]){
+        if(!visited[neighbor]){
+            DFSRecurssive(neighbor,visited);
+        }
+    }
+}
+
+public void DFS(int startNode){
+    boolean[] visited = new boolean[V];
+    System.out.print("DFS traversal starting from "+startNode+":");
+    DFSRecurssive(startNode,visited);
+    System.out.println();
+}
