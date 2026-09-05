@@ -1,0 +1,19 @@
+OSI (Open Systems Interconnection) Model
+It has 7 layers:
+  -Application
+  -Presentation
+  -Session
+  -Transport
+  -Network
+  -Data Link
+  -Physical
+
+Application Layer: Layer with which the user directly interacts for doing the desirable tasks or sending data (e.g., HTTP, FTP, SMTP).
+Presentation Layer: Handles data translation, formatting/syntax, data compression, and encryption/decryption.
+Session Layer: Establishes, manages, and terminates connections; handles authentication, authorization, and session checkpoints.
+Transport Layer: Ensures process-to-process (application-to-application) delivery via port numbers, handles segmentation, flow control, 
+and error recovery.
+Network Layer: Handles logical addressing (IP addresses), packet routing from source to destination across different networks, 
+and optimal path selection.
+Data Link Layer: Converts packets into frames and manages node-to-node physical delivery using MAC addresses on the same local network.
+Physical Layer: Transmits raw bit streams (0s and 1s) over physical media through hardware, cables, connectors, and electrical signals.
