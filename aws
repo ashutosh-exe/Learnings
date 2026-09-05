@@ -1,0 +1,21 @@
+Amazon Web Services:-
+Services offered by amazon using cloud that can be accessed virtually.
+-Root user
+  One who access to all the services on the console.
+-IAM user(Identity Access Management)
+  Creating users that can access the granted sevices by the root user on the console
+  -User:Gets the authentication to access the console with authorized services.
+  -User Groups:The users who are involved in same serives come in same group.
+  -Policies:The only granted services can be used other services are highly secured.
+  -Roles:For accessing one cloud from another cloud.
+
+
+-EC2(Elastic cloud computing)
+  For creating virtual servers that are elastic,elastic here means can be managed even after creating.
+  1.General
+  2.Compute optimized
+  3.Memory
+  4.Storage
+  5.Accelerated
+  The data center for ec2 instances can also be modified according to user requirements,we can choose nearest available aws data centers.
+  Each region has multiple availability zones in case the main one goes down so it switches to the other availability zone. 
